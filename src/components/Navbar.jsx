@@ -1,7 +1,80 @@
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
+
+  const navbarLink = (
+    <div className="flex flex-col lg:gap-7 gap-3 navbarLink lg:flex-row">
+      <NavLink to={"/"} className="text-base text-slate-600">
+        Home
+      </NavLink>
+      <NavLink to={"/allSportsEquipment"} className="text-base text-slate-600">
+        All Sports Equipment
+      </NavLink>
+
+      {user && (
+        <NavLink to={"/addEquipment"} className="text-base text-slate-600">
+          Add Equipment
+        </NavLink>
+      )}
+
+      {user && (
+        <NavLink to={"/myEquipment"} className="text-base text-slate-600">
+          My Equipment List
+        </NavLink>
+      )}
+    </div>
+  );
+
   return (
-    <div>
-      <h1>navbar</h1>
+    <div className="max-w-7xl mx-auto px-5">
+      <div className="navbar p-0">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="mr-3 lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm rounded dropdown-content bg-base-100 z-[1] mt-3 w-96 p-4 shadow"
+            >
+              {navbarLink}
+            </ul>
+          </div>
+          <Link to={"/"} className="text-2xl font-bold">
+            Equi Sports
+          </Link>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{navbarLink}</ul>
+        </div>
+        <div className="navbar-end gap-3">
+          <Link className="btn rounded bg-primaryColor text-white hover:bg-orange-600 border-none">
+            Login
+          </Link>
+          <Link
+            className="btn rounded bg-accentColor  hover:bg-gray-600
+          text-white  border-none"
+          >
+            Register
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
