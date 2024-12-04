@@ -1,7 +1,48 @@
-import { FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { loginUser, setLoading } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  function showErrorMessage(message) {
+    Swal.fire({
+      title: "Error!",
+      text: `${message}`,
+      icon: "error",
+    });
+  }
+  function showSuccessMessage(message) {
+    Swal.fire({
+      title: "Success",
+      text: `${message}`,
+      icon: "success",
+    });
+  }
+
+  function handelOnSubmit(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    loginUser(email, password)
+      .then(() => {
+        showSuccessMessage("Login Successfully");
+        navigate("/");
+        form.reset();
+      })
+      .catch(() => {
+        setLoading(false);
+        showErrorMessage("Invalid email or password");
+      });
+  }
+
   return (
     <div>
       <div className="bg-gray-50 flex items-center justify-center px-5 py-20">
@@ -12,7 +53,7 @@ const Login = () => {
 
           <hr />
 
-          <form className="card-body">
+          <form onSubmit={handelOnSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -59,7 +100,7 @@ const Login = () => {
           <div className="divider mx-8">Or</div>
           <div className="px-8 pb-6">
             <button className="btn btn-outline rounded w-full">
-              <FaGoogle /> Login with Google
+              <FcGoogle /> Login with Google
             </button>
           </div>
         </div>

@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     user,
     loading,
+    setLoading,
     loginUser,
     createUser,
     logOut,
@@ -58,7 +59,7 @@ const AuthProvider = ({ children }) => {
   }
 
   function updateUser(info) {
-    updateProfile(auth.currentUser, info);
+    return updateProfile(auth.currentUser, info);
   }
 
   function loginWithGoogle() {

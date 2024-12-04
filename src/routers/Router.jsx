@@ -5,6 +5,9 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AllSportsEquipment from "../pages/AllSportsEquipment";
+import PrivateRouter from "./PrivateRouter";
+import AddEquipment from "../pages/AddEquipment";
+import MyEquipmentList from "../pages/MyEquipmentList";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -31,11 +34,19 @@ const Router = () => {
         },
         {
           path: "/addEquipment",
-          element: <AllSportsEquipment></AllSportsEquipment>,
+          element: (
+            <PrivateRouter>
+              <AddEquipment></AddEquipment>
+            </PrivateRouter>
+          ),
         },
         {
           path: "/myEquipment",
-          element: <AllSportsEquipment></AllSportsEquipment>,
+          element: (
+            <PrivateRouter>
+              <MyEquipmentList></MyEquipmentList>
+            </PrivateRouter>
+          ),
         },
       ],
     },

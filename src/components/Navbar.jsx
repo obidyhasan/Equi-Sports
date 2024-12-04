@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const navbarLink = (
     <div className="flex flex-col lg:gap-7 gap-3 navbarLink lg:flex-row">
@@ -63,21 +63,45 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navbarLink}</ul>
         </div>
-        <div className="flex-1 gap-3 justify-end">
-          <Link
-            to={"/login"}
-            className="btn rounded bg-primaryColor text-white hover:bg-orange-600 border-none"
-          >
-            Login
-          </Link>
-          <Link
-            to={"/register"}
-            className="btn hidden sm:flex rounded bg-accentColor  hover:bg-gray-600
+
+        {user ? (
+          <div className="flex-1 gap-3 justify-end">
+            <figure
+              className="tooltip tooltip-left"
+              data-tip={user.displayName}
+            >
+              <img
+                src={user.photoURL}
+                className="w-12 h-12 object-cover rounded-full border"
+                alt=""
+              />
+            </figure>
+
+            <button
+              onClick={logOut}
+              className="btn hidden sm:flex rounded bg-accentColor  hover:bg-gray-600
           text-white  border-none"
-          >
-            Register
-          </Link>
-        </div>
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className="flex-1 gap-3 justify-end">
+            <Link
+              to={"/login"}
+              className="btn rounded bg-primaryColor text-white hover:bg-orange-600 border-none"
+            >
+              Login
+            </Link>
+            <Link
+              to={"/register"}
+              className="btn hidden sm:flex rounded bg-accentColor  hover:bg-gray-600
+          text-white  border-none"
+            >
+              Register
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

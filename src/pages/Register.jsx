@@ -1,7 +1,91 @@
-import { FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
+  const { createUser, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  function showErrorMessage(message) {
+    Swal.fire({
+      title: "Error!",
+      text: `${message}`,
+      icon: "error",
+    });
+  }
+  function showSuccessMessage(message) {
+    Swal.fire({
+      title: "Success",
+      text: `${message}`,
+      icon: "success",
+    });
+  }
+
+  function handelOnSubmit(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+
+    const user = { name, email, photo };
+
+    // Validation
+    const checkUppercase = /^(?=.*[A-Z]).*$/;
+    const checkLowercase = /^(?=.*[a-z]).*$/;
+
+    if (password.length < 6) {
+      showErrorMessage("Password length must be at least 6 character");
+      return;
+    }
+    if (!checkUppercase.test(password)) {
+      showErrorMessage("Must have an Uppercase letter in the password");
+      return;
+    }
+    if (!checkLowercase.test(password)) {
+      showErrorMessage("Must have a Lowercase letter in the password");
+      return;
+    }
+
+    // Firebase Register
+    createUser(email, password)
+      .then(() => {
+        const userInfo = {
+          displayName: name,
+          photoURL: photo,
+        };
+        updateUser(userInfo)
+          .then(() => {
+            fetch("https://equi-sports-server-jade.vercel.app/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(user),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  showSuccessMessage("Register Successfully");
+                  navigate("/");
+                  form.reset();
+                }
+              });
+          })
+          .catch((error) => {
+            showErrorMessage("Something went wrong!");
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        showErrorMessage("Something went wrong!");
+        console.log(error);
+      });
+  }
+
   return (
     <div>
       <div className="bg-gray-50 flex items-center justify-center px-5 py-20">
@@ -12,7 +96,7 @@ const Register = () => {
 
           <hr />
 
-          <form className="card-body">
+          <form onSubmit={handelOnSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -80,7 +164,7 @@ const Register = () => {
           <div className="divider mx-8">Or</div>
           <div className="px-8 pb-6">
             <button className="btn btn-outline rounded w-full">
-              <FaGoogle /> Register with Google
+              <FcGoogle /> Register with Google
             </button>
           </div>
         </div>
