@@ -1,4 +1,5 @@
 import Slider from "../components/Slider";
+import Products from "./Products";
 
 const Home = () => {
   return (
@@ -6,6 +7,9 @@ const Home = () => {
       <header>
         <Slider></Slider>
       </header>
+      <section>
+        <Products></Products>
+      </section>
     </div>
   );
 };

@@ -1,0 +1,20 @@
+[
+  { "id": 1, "name": "Team Sports", "path": "/categories/team-sports" },
+  {
+    "id": 2,
+    "name": "Fitness & Training",
+    "path": "/categories/fitness-training"
+  },
+  { "id": 3, "name": "Racket Sports", "path": "/categories/racket-sports" },
+  {
+    "id": 4,
+    "name": "Outdoor & Adventure",
+    "path": "/categories/outdoor-adventure"
+  },
+  { "id": 5, "name": "Water Sports", "path": "/categories/water-sports" },
+  {
+    "id": 6,
+    "name": "Apparel & Accessories",
+    "path": "/categories/apparel-accessories"
+  }
+]
