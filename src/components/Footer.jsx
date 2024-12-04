@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100 py-10">
-      <div className="max-w-7xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-5">
+    <div className="bg-gray-50 py-10">
+      <div className="max-w-7xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-10 sm:gap-5">
         <div>
           <h1 className="font-bold text-2xl mb-5">Equi Sports</h1>
           <p className="text-sm max-w-lg text-gray-500">
@@ -35,7 +35,7 @@ const Footer = () => {
 
         <div>
           <h4 className="font-semibold text-xl">Contact Info</h4>
-          <div className="space-y-2 mt-5">
+          <div className="space-y-3 mt-5">
             <p className="flex items-center gap-3">
               <MdEmail className="text-lg" /> equisports@gmail.com
             </p>

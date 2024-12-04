@@ -64,10 +64,14 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navbarLink}</ul>
         </div>
         <div className="flex-1 gap-3 justify-end">
-          <Link className="btn rounded bg-primaryColor text-white hover:bg-orange-600 border-none">
+          <Link
+            to={"/login"}
+            className="btn rounded bg-primaryColor text-white hover:bg-orange-600 border-none"
+          >
             Login
           </Link>
           <Link
+            to={"/register"}
             className="btn hidden sm:flex rounded bg-accentColor  hover:bg-gray-600
           text-white  border-none"
           >
