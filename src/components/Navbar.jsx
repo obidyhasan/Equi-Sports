@@ -31,12 +31,12 @@ const Navbar = () => {
   return (
     <div className="max-w-7xl mx-auto px-5">
       <div className="navbar p-0">
-        <div className="navbar-start">
+        <div className="sm:flex-1">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="mr-3 lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -51,24 +51,24 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm rounded dropdown-content bg-base-100 z-[1] mt-3 w-96 p-4 shadow"
+              className="menu menu-sm rounded dropdown-content bg-base-100 z-[1] mt-3 w-52 p-4 shadow"
             >
               {navbarLink}
             </ul>
           </div>
-          <Link to={"/"} className="text-2xl font-bold">
+          <Link to={"/"} className="text-2xl font-bold ">
             Equi Sports
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navbarLink}</ul>
         </div>
-        <div className="navbar-end gap-3">
+        <div className="flex-1 gap-3 justify-end">
           <Link className="btn rounded bg-primaryColor text-white hover:bg-orange-600 border-none">
             Login
           </Link>
           <Link
-            className="btn rounded bg-accentColor  hover:bg-gray-600
+            className="btn hidden sm:flex rounded bg-accentColor  hover:bg-gray-600
           text-white  border-none"
           >
             Register
