@@ -1,7 +1,11 @@
+import Slider from "../components/Slider";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="max-w-7xl mx-auto px-5">
+      <header>
+        <Slider></Slider>
+      </header>
     </div>
   );
 };
