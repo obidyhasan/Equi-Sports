@@ -3,10 +3,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
+import { useEffect, useState } from "react";
+import Slide from "./Slide";
 
 const Slider = () => {
+  const [sliders, setSliders] = useState([]);
+
+  useEffect(() => {
+    fetch("/sliderData.json")
+      .then((res) => res.json())
+      .then((data) => setSliders(data));
+  }, []);
+
   return (
-    <div>
+    <div className="my-2">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -18,11 +28,15 @@ const Slider = () => {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="mySwiper"
+        className="mySwiper h-[550px] rounded-md"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        <div>
+          {sliders.map((slider) => (
+            <SwiperSlide key={slider.id}>
+              <Slide slide={slider}></Slide>
+            </SwiperSlide>
+          ))}
+        </div>
       </Swiper>
     </div>
   );
