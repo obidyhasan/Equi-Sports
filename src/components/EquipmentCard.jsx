@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const EquipmentCard = ({ equipment }) => {
   const {
+    _id,
     name,
     photo,
     price,
@@ -40,9 +42,12 @@ const EquipmentCard = ({ equipment }) => {
       </div>
 
       <div className="flex gap-3">
-        <button className="btn flex-1 rounded bg-yellow-500 text-white">
+        <Link
+          to={`/updateEquipment/${_id}`}
+          className="btn flex-1 rounded bg-yellow-500 text-white"
+        >
           Update
-        </button>
+        </Link>
         <button className="btn flex-1 rounded bg-red-500 text-white">
           Delete
         </button>

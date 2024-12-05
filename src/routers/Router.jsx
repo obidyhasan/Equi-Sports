@@ -10,6 +10,7 @@ import AddEquipment from "../pages/AddEquipment";
 import MyEquipmentList from "../pages/MyEquipmentList";
 import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
+import UpdateEquipment from "../pages/UpdateEquipment";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -73,6 +74,18 @@ const Router = () => {
           element: (
             <PrivateRouter>
               <ProductDetails></ProductDetails>
+            </PrivateRouter>
+          ),
+          loader: ({ params }) =>
+            fetch(
+              `https://equi-sports-server-jade.vercel.app/products/${params.productId}`
+            ),
+        },
+        {
+          path: "/updateEquipment/:productId",
+          element: (
+            <PrivateRouter>
+              <UpdateEquipment></UpdateEquipment>
             </PrivateRouter>
           ),
           loader: ({ params }) =>
