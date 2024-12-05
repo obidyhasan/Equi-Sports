@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const EquipmentCard = ({ equipment }) => {
+const EquipmentCard = ({ equipment, myEquipments, setMyEquipments }) => {
   const {
     _id,
     name,
@@ -13,6 +14,39 @@ const EquipmentCard = ({ equipment }) => {
     category,
     selectedTime,
   } = equipment;
+
+  function handelDelete(id) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://equi-sports-server-jade.vercel.app/equipments/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+
+              const remainingEquipment = myEquipments.filter(
+                (equi) => equi._id !== id
+              );
+              setMyEquipments(remainingEquipment);
+            }
+          });
+      }
+    });
+  }
 
   return (
     <div className="border p-3 rounded flex flex-col gap-3">
@@ -48,7 +82,10 @@ const EquipmentCard = ({ equipment }) => {
         >
           Update
         </Link>
-        <button className="btn flex-1 rounded bg-red-500 text-white">
+        <button
+          onClick={() => handelDelete(_id)}
+          className="btn flex-1 rounded bg-red-500 text-white"
+        >
           Delete
         </button>
       </div>
@@ -58,6 +95,8 @@ const EquipmentCard = ({ equipment }) => {
 
 EquipmentCard.propTypes = {
   equipment: PropTypes.object,
+  myEquipments: PropTypes.array,
+  setMyEquipments: PropTypes.func,
 };
 
 export default EquipmentCard;
