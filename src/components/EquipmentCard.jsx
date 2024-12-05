@@ -27,11 +27,9 @@ const EquipmentCard = ({ equipment }) => {
           <div className="flex gap-5 justify-between">
             <h1 className="font-medium text-lg">{name}</h1>
 
-            <p className="font-semibold text-orange-500 ">{price}</p>
+            <p className="font-semibold text-orange-500 mt-1">${price}</p>
           </div>
-          <p className="line-clamp-2 text-sm text-gray-500">
-            {description || "N/A"}
-          </p>
+          <p className="line-clamp-2 text-sm text-gray-500">{description}</p>
           <hr />
           <p className="text-gray-600">{selectedTime}</p>
           <div className="flex justify-between items-center">

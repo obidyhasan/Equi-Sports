@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -8,6 +8,7 @@ const Login = () => {
   const { loginUser, setLoading } = useContext(AuthContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   function showErrorMessage(message) {
     Swal.fire({
@@ -34,7 +35,7 @@ const Login = () => {
     loginUser(email, password)
       .then(() => {
         showSuccessMessage("Login Successfully");
-        navigate("/");
+        navigate(location.state ? location.state : "/");
         form.reset();
       })
       .catch(() => {

@@ -42,7 +42,7 @@ const Home = () => {
               </div>
             </div>
 
-            <section className="col-span-1 md:col-span-2 lg:col-span-3">
+            <section className="h-min col-span-1 md:col-span-2 lg:col-span-3">
               <Outlet></Outlet>
             </section>
           </div>

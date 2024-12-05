@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const {
+    _id,
     name,
     photo,
     price,
@@ -27,7 +29,7 @@ const ProductCard = ({ product }) => {
           <div className="flex gap-5 justify-between">
             <h1 className="font-medium text-lg">{name}</h1>
 
-            <p className="font-semibold text-orange-500 ">{price}</p>
+            <p className="font-semibold text-orange-500 mt-1">${price}</p>
           </div>
           <p className="line-clamp-2 text-sm text-gray-500">
             {description || "N/A"}
@@ -42,9 +44,12 @@ const ProductCard = ({ product }) => {
       </div>
 
       <div className="flex gap-3">
-        <button className="btn flex-1 rounded bg-primaryColor text-white">
+        <Link
+          to={`/productDetails/${_id}`}
+          className="btn flex-1 rounded bg-primaryColor text-white"
+        >
           View Details
-        </button>
+        </Link>
       </div>
     </div>
   );

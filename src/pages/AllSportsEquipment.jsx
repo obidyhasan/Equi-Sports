@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllSportsEquipment = () => {
   const [equipments, setEquipments] = useState([]);
@@ -57,9 +58,12 @@ const AllSportsEquipment = () => {
                     <td>{equipment.selectedTime}</td>
                     <td>{equipment.stock}</td>
                     <td>
-                      <button className="btn bg-primaryColor text-white hover:bg-orange-600">
+                      <Link
+                        to={`/productDetails/${equipment._id}`}
+                        className="btn bg-primaryColor text-white hover:bg-orange-600"
+                      >
                         Details
-                      </button>
+                      </Link>
                     </td>
                   </tr>
                 ))}
@@ -67,7 +71,7 @@ const AllSportsEquipment = () => {
             </table>
           </div>
         ) : (
-          <h1 className="font-semibold text-lg text-center my-5">
+          <h1 className="font-semibold text-xl text-center my-5">
             No Sports Equipment Found
           </h1>
         )}

@@ -29,11 +29,17 @@ const MyEquipmentList = () => {
         </p>
       </div>
 
-      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        {myEquipments.map((equipment, idx) => (
-          <EquipmentCard key={idx} equipment={equipment}></EquipmentCard>
-        ))}
-      </div>
+      {myEquipments.length ? (
+        <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {myEquipments.map((equipment, idx) => (
+            <EquipmentCard key={idx} equipment={equipment}></EquipmentCard>
+          ))}
+        </div>
+      ) : (
+        <h1 className="font-semibold text-xl text-center my-8">
+          My Equipment List is Empty
+        </h1>
+      )}
     </div>
   );
 };
