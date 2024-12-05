@@ -23,6 +23,7 @@ const AddEquipment = () => {
     const stock = form.stock.value;
     const userName = user.displayName;
     const userEmail = user.email;
+    const description = form.description.value;
 
     const productInfo = {
       name,
@@ -35,6 +36,7 @@ const AddEquipment = () => {
       stock,
       userName,
       userEmail,
+      description,
     };
 
     fetch("https://equi-sports-server-jade.vercel.app/equipments", {
@@ -183,6 +185,7 @@ const AddEquipment = () => {
               <span className="label-text">Description*</span>
             </div>
             <textarea
+              name="description"
               className="textarea textarea-bordered w-full min-h-24 rounded"
               placeholder="about product"
               required
