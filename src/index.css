@@ -13,3 +13,8 @@
   font-weight: 500;
   text-decoration: underline;
 }
+.categoryLinks .active {
+  color: black;
+  font-weight: 600;
+  text-decoration: underline;
+}

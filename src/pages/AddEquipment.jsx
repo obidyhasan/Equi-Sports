@@ -39,6 +39,16 @@ const AddEquipment = () => {
       description,
     };
 
+    fetch("https://equi-sports-server-jade.vercel.app/categories", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ category }),
+    })
+      .then((res) => res.json())
+      .then(() => {});
+
     fetch("https://equi-sports-server-jade.vercel.app/equipments", {
       method: "POST",
       headers: {

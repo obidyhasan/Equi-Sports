@@ -8,6 +8,7 @@ import AllSportsEquipment from "../pages/AllSportsEquipment";
 import PrivateRouter from "./PrivateRouter";
 import AddEquipment from "../pages/AddEquipment";
 import MyEquipmentList from "../pages/MyEquipmentList";
+import Products from "../pages/Products";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -19,6 +20,24 @@ const Router = () => {
         {
           path: "/",
           element: <Home></Home>,
+          loader: () =>
+            fetch("https://equi-sports-server-jade.vercel.app/categories"),
+          children: [
+            {
+              path: "/",
+              element: <Products>All Product</Products>,
+              loader: () =>
+                fetch("https://equi-sports-server-jade.vercel.app/equipments"),
+            },
+            {
+              path: "/categories/:category",
+              element: <Products>hello</Products>,
+              loader: ({ params }) =>
+                fetch(
+                  `https://equi-sports-server-jade.vercel.app/equipments/${params.category}`
+                ),
+            },
+          ],
         },
         {
           path: "/login",
