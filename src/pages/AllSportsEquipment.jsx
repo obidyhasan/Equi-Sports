@@ -60,7 +60,7 @@ const AllSportsEquipment = () => {
                       <div className="flex items-center gap-5">
                         <img
                           src={equipment.photo}
-                          className="w-10 h-10 rounded-lg"
+                          className="w-10 h-10 bg-gray-50 rounded-lg"
                           alt=""
                         />
                         <div>

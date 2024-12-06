@@ -87,7 +87,7 @@ const Register = () => {
 
   return (
     <div>
-      <div className="bg-gray-50 flex items-center justify-center px-5 py-20">
+      <div className="bg-base-200 flex items-center justify-center px-5 py-20">
         <div className="card bg-base-100 w-full max-w-md rounded">
           <h2 className="font-semibold text-2xl text-center my-5 mx-8">
             Create Account

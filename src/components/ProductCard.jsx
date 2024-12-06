@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
         <figure>
           <img
             src={photo}
-            className="w-full h-[220px] object-cover rounded-md"
+            className="w-full h-[220px] bg-gray-50 object-cover rounded-md"
             alt=""
           />
         </figure>
@@ -35,10 +35,10 @@ const ProductCard = ({ product }) => {
             {description || "N/A"}
           </p>
           <hr />
-          <p className="text-gray-600">{selectedTime}</p>
+          <p className="text-gray-500">{selectedTime}</p>
           <div className="flex justify-between items-center">
-            <p className="text-gray-600">Rating: {rating}</p>
-            <p className="text-gray-600">Stock: {stock}</p>
+            <p className="text-gray-500">Rating: {rating}</p>
+            <p className="text-gray-500">Stock: {stock}</p>
           </div>
         </div>
       </div>
