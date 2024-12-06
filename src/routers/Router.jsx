@@ -29,7 +29,9 @@ const Router = () => {
               path: "/",
               element: <Products>All Product</Products>,
               loader: () =>
-                fetch("https://equi-sports-server-jade.vercel.app/equipments"),
+                fetch(
+                  "https://equi-sports-server-jade.vercel.app/equipments/products"
+                ),
             },
             {
               path: "/categories/:category",

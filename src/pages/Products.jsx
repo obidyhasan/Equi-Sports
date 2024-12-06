@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 
 const Products = () => {
@@ -6,7 +6,13 @@ const Products = () => {
 
   return (
     <div>
-      <h2 className="font-semibold text-lg mb-4">Products</h2>
+      <div className="flex justify-between items-center gap-5">
+        <h2 className="font-semibold text-lg">Products</h2>
+
+        <Link to={"/allSportsEquipment"} className="btn">
+          See More
+        </Link>
+      </div>
 
       {loaderData.length ? (
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

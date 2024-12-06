@@ -10,14 +10,30 @@ const AllSportsEquipment = () => {
       .then((data) => setEquipments(data));
   }, []);
 
+  function handelSort() {
+    fetch("https://equi-sports-server-jade.vercel.app/equipments/sort")
+      .then((res) => res.json())
+      .then((data) => setEquipments(data));
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-5 py-5">
-      <div>
-        <h1 className="font-semibold text-xl">All Sports Equipment</h1>
-        <p className="font-light max-w-xl text-sm mt-2">
-          Browse through our extensive collection of sports equipment, including
-          everything from team gear to fitness essentials.
-        </p>
+      <div className="flex justify-between gap-10">
+        <div>
+          <h1 className="font-semibold text-xl">All Sports Equipment</h1>
+          <p className="font-light max-w-xl text-sm mt-2">
+            Browse through our extensive collection of sports equipment,
+            including everything from team gear to fitness essentials.
+          </p>
+        </div>
+        <div>
+          <button
+            onClick={handelSort}
+            className="btn bg-primaryColor text-white hover:bg-primaryColor rounded"
+          >
+            Sort
+          </button>
+        </div>
       </div>
 
       <div className="my-10">
