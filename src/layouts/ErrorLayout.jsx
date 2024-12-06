@@ -1,7 +1,20 @@
+import Lottie from "lottie-react";
+import notFound from "../json/404_animation.json";
+import { Link } from "react-router-dom";
+
 const ErrorLayout = () => {
   return (
-    <div>
-      <h1>Error Layout</h1>
+    <div className="w-full min-h-screen gap-5 flex-col max-w-7xl mx-auto px-5 flex items-center justify-center">
+      <Lottie
+        className="max-w-2xl mx-auto"
+        animationData={notFound}
+        loop={true}
+      />
+
+      <h1 className="font-semibold text-center text-3xl">Page Not Found</h1>
+      <Link to={"/"} className="btn">
+        Go To Home
+      </Link>
     </div>
   );
 };

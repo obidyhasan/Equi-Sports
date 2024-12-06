@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
@@ -152,20 +151,13 @@ const Register = () => {
             </div>
           </form>
 
-          <div className=" -mt-3">
+          <div className=" -mt-3 mb-8">
             <p className="text-sm text-center">
               {"Already have an account? "}
               <Link to={"/login"} className="font-semibold text-primaryColor">
                 Login
               </Link>
             </p>
-          </div>
-
-          <div className="divider mx-8">Or</div>
-          <div className="px-8 pb-6">
-            <button className="btn btn-outline rounded w-full">
-              <FcGoogle /> Register with Google
-            </button>
           </div>
         </div>
       </div>

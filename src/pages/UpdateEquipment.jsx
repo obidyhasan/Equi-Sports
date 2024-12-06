@@ -65,6 +65,12 @@ const UpdateEquipment = () => {
           });
 
           navigate("/myEquipment");
+        } else {
+          Swal.fire({
+            title: "Info",
+            text: "Nothing has been changed for the update.",
+            icon: "info",
+          });
         }
       });
   }

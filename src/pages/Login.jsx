@@ -5,7 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { loginUser, setLoading } = useContext(AuthContext);
+  const { loginUser, setLoading, loginWithGoogle } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -41,6 +41,18 @@ const Login = () => {
       .catch(() => {
         setLoading(false);
         showErrorMessage("Invalid email or password");
+      });
+  }
+
+  function handelLoginWithGoogle() {
+    loginWithGoogle()
+      .then(() => {
+        showSuccessMessage("Login Successfully");
+        navigate(location.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        showErrorMessage("Something went wrong!");
       });
   }
 
@@ -100,8 +112,11 @@ const Login = () => {
 
           <div className="divider mx-8">Or</div>
           <div className="px-8 pb-6">
-            <button className="btn btn-outline rounded w-full">
-              <FcGoogle /> Login with Google
+            <button
+              onClick={handelLoginWithGoogle}
+              className="btn btn-outline rounded w-full"
+            >
+              <FcGoogle className="text-xl" /> Login with Google
             </button>
           </div>
         </div>
