@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Johnson",
+    "userIdentity": "Athlete",
+    "rating": 5,
+    "review": "Fantastic store with a great selection of sports gear! The quality of the products is excellent, and the delivery was super fast.",
+    "image": "https://i.ibb.co.com/ZKg98qb/Ellipse-1-1.png"
+  },
+  {
+    "id": 2,
+    "name": "Samantha Lee",
+    "userIdentity": "Fitness Enthusiast",
+    "rating": 4,
+    "review": "The customer service was very helpful, and I found exactly what I needed for my fitness routine. Highly recommend!",
+    "image": "https://i.ibb.co.com/jHdFwXp/profile.png"
+  },
+  {
+    "id": 3,
+    "name": "Michael Carter",
+    "userIdentity": "Tennis Player",
+    "rating": 5,
+    "review": "I purchased a tennis racket, and it's absolutely perfect! Great value for the price and quick shipping.",
+    "image": "https://i.ibb.co.com/wBS4vmS/Ellipse-1.png"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "userIdentity": "Yoga Practitioner",
+    "rating": 4.5,
+    "review": "Love the variety of products available! My yoga mat is just what I was looking for. Will definitely shop here again.",
+    "image": "https://i.ibb.co.com/G0Q0HcM/Ellipse-1-2.png"
+  }
+]

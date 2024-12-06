@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Slide } from "react-awesome-reveal";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
@@ -72,7 +73,9 @@ const AddEquipment = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-5 py-5">
-      <h1 className="font-semibold text-xl">Add Equipment</h1>
+      <Slide>
+        <h1 className="font-semibold text-2xl">Add Equipment</h1>
+      </Slide>
       <p className="font-light max-w-xl text-sm mt-2">
         Add your sports equipment to the store by providing product details,
         including images, pricing, and specifications.

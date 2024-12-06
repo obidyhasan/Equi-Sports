@@ -106,7 +106,7 @@ const Navbar = () => {
           {user ? (
             <div className="flex gap-4 items-center">
               <figure
-                className="tooltip tooltip-left"
+                className="tooltip tooltip-left hidden sm:flex"
                 data-tip={user.displayName}
               >
                 <img
@@ -118,7 +118,7 @@ const Navbar = () => {
 
               <button
                 onClick={logOut}
-                className="btn hidden sm:flex rounded bg-accentColor  hover:bg-gray-600
+                className="btn  rounded bg-accentColor  hover:bg-gray-600
           text-white  border-none"
               >
                 Logout

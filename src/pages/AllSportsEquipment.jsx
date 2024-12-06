@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Slide } from "react-awesome-reveal";
 
 const AllSportsEquipment = () => {
   const [equipments, setEquipments] = useState([]);
@@ -20,7 +21,10 @@ const AllSportsEquipment = () => {
     <div className="max-w-7xl mx-auto px-5 py-5">
       <div className="flex justify-between gap-10">
         <div>
-          <h1 className="font-semibold text-xl">All Sports Equipment</h1>
+          <Slide>
+            <h1 className="font-semibold text-2xl">All Sports Equipment</h1>
+          </Slide>
+
           <p className="font-light max-w-xl text-sm mt-2">
             Browse through our extensive collection of sports equipment,
             including everything from team gear to fitness essentials.
