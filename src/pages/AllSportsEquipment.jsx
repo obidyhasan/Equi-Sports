@@ -35,7 +35,7 @@ const AllSportsEquipment = () => {
             onClick={handelSort}
             className="btn bg-primaryColor text-white hover:bg-primaryColor rounded"
           >
-            Sort
+            Sort by price
           </button>
         </div>
       </div>
