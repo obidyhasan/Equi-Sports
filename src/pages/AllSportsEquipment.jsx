@@ -19,7 +19,7 @@ const AllSportsEquipment = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-5 py-5">
-      <div className="flex justify-between gap-10">
+      <div className="flex flex-col sm:flex-row justify-between gap-5">
         <div>
           <Slide>
             <h1 className="font-semibold text-2xl">All Sports Equipment</h1>

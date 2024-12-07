@@ -64,7 +64,7 @@ const Navbar = () => {
               {navbarLink}
             </ul>
           </div>
-          <Link to={"/"} className="text-2xl font-bold ">
+          <Link to={"/"} className="text-2xl hidden sm:flex font-bold ">
             Equi Sports
           </Link>
         </div>
@@ -106,7 +106,7 @@ const Navbar = () => {
           {user ? (
             <div className="flex gap-4 items-center">
               <figure
-                className="tooltip tooltip-left hidden sm:flex"
+                className="tooltip tooltip-left flex"
                 data-tip={user.displayName}
               >
                 <img
