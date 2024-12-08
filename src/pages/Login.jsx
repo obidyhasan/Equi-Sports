@@ -37,6 +37,7 @@ const Login = () => {
         showSuccessMessage("Login Successfully");
         navigate(location.state ? location.state : "/");
         form.reset();
+        setLoading(false);
       })
       .catch(() => {
         setLoading(false);
@@ -53,6 +54,7 @@ const Login = () => {
       .catch((error) => {
         console.log(error.message);
         showErrorMessage("Something went wrong!");
+        setLoading(false);
       });
   }
 

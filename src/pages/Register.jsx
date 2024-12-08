@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   function showErrorMessage(message) {
     Swal.fire({
@@ -71,17 +71,20 @@ const Register = () => {
                   showSuccessMessage("Register Successfully");
                   navigate("/");
                   form.reset();
+                  setLoading(false);
                 }
               });
           })
           .catch((error) => {
             showErrorMessage("Something went wrong!");
             console.log(error);
+            setLoading(false);
           });
       })
       .catch((error) => {
         showErrorMessage("Something went wrong!");
         console.log(error);
+        setLoading(false);
       });
   }
 
