@@ -21,24 +21,12 @@ const Navbar = () => {
       <NavLink to={"/allSportsEquipment"} className="text-base text-gray-500">
         All Sports Equipment
       </NavLink>
-
-      {user && (
-        <NavLink to={"/addEquipment"} className="text-base text-gray-500">
-          Add Equipment
-        </NavLink>
-      )}
-
-      {user && (
-        <NavLink to={"/myEquipment"} className="text-base text-gray-500">
-          My Equipment List
-        </NavLink>
-      )}
     </div>
   );
 
   return (
     <div className="max-w-7xl mx-auto px-5">
-      <div className="navbar p-0">
+      <div className="navbar py-3 px-0">
         <div className="sm:flex-1">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="mr-3 lg:hidden">
@@ -105,39 +93,58 @@ const Navbar = () => {
 
           {user ? (
             <div className="flex gap-4 items-center">
-              <figure
-                className="tooltip tooltip-left flex"
-                data-tip={user.displayName}
-              >
-                <img
-                  src={user.photoURL}
-                  className="w-11 h-11 object-cover rounded-full border"
-                  alt=""
-                />
-              </figure>
+              <div className="dropdown dropdown-end">
+                <div tabIndex={0} role="button">
+                  <figure
+                    className="tooltip tooltip-left flex"
+                    data-tip={user.displayName}
+                  >
+                    <img
+                      src={user.photoURL}
+                      className="w-11 h-11 object-cover rounded-full border"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+                <div
+                  tabIndex={0}
+                  className="menu menu-sm rounded space-y-4 dropdown-content bg-base-100 z-[1] mt-3 w-52 p-4 shadow"
+                >
+                  <div>
+                    <div className="flex flex-col  gap-3 navbarLink">
+                      {user && (
+                        <NavLink
+                          to={"/addEquipment"}
+                          className="text-base text-gray-500"
+                        >
+                          Add Equipment
+                        </NavLink>
+                      )}
 
-              <button
-                onClick={logOut}
-                className="btn  rounded bg-accentColor  hover:bg-gray-600
+                      {user && (
+                        <NavLink
+                          to={"/myEquipment"}
+                          className="text-base text-gray-500"
+                        >
+                          My Equipment List
+                        </NavLink>
+                      )}
+                    </div>
+                  </div>
+                  <button
+                    onClick={logOut}
+                    className="btn  rounded bg-accentColor  hover:bg-gray-600
           text-white  border-none"
-              >
-                Logout
-              </button>
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
             <div className="flex gap-4">
-              <Link
-                to={"/login"}
-                className="btn rounded bg-primaryColor text-white hover:bg-orange-600 border-none"
-              >
+              <Link to={"/login"} className="btn rounded px-6 btn-outline ">
                 Login
-              </Link>
-              <Link
-                to={"/register"}
-                className="btn hidden sm:flex rounded bg-accentColor  hover:bg-gray-600
-          text-white  border-none"
-              >
-                Register
               </Link>
             </div>
           )}

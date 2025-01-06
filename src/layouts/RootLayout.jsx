@@ -13,7 +13,7 @@ const RootLayout = () => {
 
   return (
     <div>
-      <nav className="sticky top-0 z-10 bg-base-100">
+      <nav className="sticky shadow-sm top-0 z-10 bg-base-100">
         <Navbar></Navbar>
       </nav>
       <Outlet></Outlet>

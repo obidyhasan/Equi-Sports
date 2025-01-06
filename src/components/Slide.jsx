@@ -6,17 +6,21 @@ const Slide = ({ slide }) => {
       <figure className="w-full h-full">
         <img
           src={slide.img}
-          className=" w-full h-[550px] object-cover rounded-md"
+          className=" w-full h-[550px] object-cover"
           alt=""
         />
       </figure>
 
-      <div className="absolute top-0 left-0 p-5 sm:p-10 w-full h-full flex justify-center flex-col items-start">
-        <h1 className="text-base-100 font-bold text-3xl sm:text-5xl">
-          {slide.title}
-        </h1>
-        <p className="text-base-100 my-3 font-light">{slide.description}</p>
-        <button className="btn rounded">Explore More</button>
+      <div className="absolute top-0 left-0 bg-[#00000040] w-full h-full flex items-center flex-col justify-center">
+        <div className="w-full">
+          <div className="max-w-7xl mx-auto px-5 text-white">
+            <h1 className=" font-bold text-3xl sm:text-5xl">{slide.title}</h1>
+            <p className=" my-3 font-light">{slide.description}</p>
+            <button className="btn rounded bg-white text-black border-none hover:bg-gray-100">
+              Explore More
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

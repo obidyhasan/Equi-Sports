@@ -16,7 +16,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="my-2 bg-base-200 rounded">
+    <div className="bg-base-200">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -28,7 +28,7 @@ const Slider = () => {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="mySwiper h-[550px] rounded-md"
+        className="mySwiper h-[550px]"
       >
         <div>
           {sliders.map((slider) => (
