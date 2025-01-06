@@ -7,13 +7,15 @@ import {
 import { MdEmail, MdCall } from "react-icons/md";
 import { FaLocationArrow } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from "../assets/sport-icon.png";
 
 const Footer = () => {
   return (
     <div className="bg-base-100 border-t py-10">
-      <div className="max-w-screen-2xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-10 sm:gap-5">
-        <div>
-          <h1 className="font-bold text-2xl mb-5">Equi Sports</h1>
+      <div className="max-w-screen-2xl mx-auto px-5 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <div className="sm:col-span-2">
+          <img src={logo} className="w-12 h-12" alt="" />
+          <h1 className="font-bold text-2xl mb-5 mt-3">Equi Sports</h1>
           <p className="text-sm max-w-lg text-gray-500">
             EquiSports is an online store for high-quality sports gear and
             accessories. It offers a wide range of products for athletes,
@@ -30,6 +32,17 @@ const Footer = () => {
             <Link>
               <FaTwitter />
             </Link>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="font-semibold text-xl">Useful Links</h4>
+
+          <div className="space-y-3 mt-5 font-medium underline text-gray-600">
+            <p>Home</p>
+            <p>All Sports Equipment</p>
+            <p>About Us</p>
+            <p>Terms & Condition</p>
           </div>
         </div>
 
