@@ -13,7 +13,7 @@ const ReviewSection = () => {
     <div>
       <div>
         <Slide>
-          <h1 className="text-4xl font-bold">What Our Customers Say</h1>
+          <h1 className="text-4xl font-semibold">What Our Customers Say</h1>
         </Slide>
         <p className="font-light text-gray-500 max-w-2xl mt-5">
           Discover what our happy customers have to say about their experience

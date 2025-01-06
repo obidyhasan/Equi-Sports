@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
   } = product;
 
   return (
-    <div className="border p-3 rounded flex flex-col gap-3">
+    <div className=" border p-3 rounded flex flex-col gap-3">
       <div className="flex-1">
         <figure>
           <img

@@ -5,7 +5,7 @@ const SectionHeader = ({ title, subtitle }) => {
   return (
     <div className="my-5">
       <Slide>
-        <h1 className="font-semibold text-3xl">{title}</h1>
+        <h1 className="font-semibold text-4xl">{title}</h1>
       </Slide>
 
       <p className="font-light max-w-xl text-sm mt-3">{subtitle}</p>

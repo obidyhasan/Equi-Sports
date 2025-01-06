@@ -38,10 +38,11 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold text-xl">Useful Links</h4>
 
-          <div className="space-y-3 mt-5 font-medium underline text-gray-600">
-            <p>Home</p>
-            <p>All Sports Equipment</p>
-            <p>About Us</p>
+          <div className="flex flex-col gap-3 mt-5 font-medium underline text-gray-500">
+            <Link to={"/"}>Home</Link>
+            <Link to={"/allSportsEquipment"}>All Sports Equipment</Link>
+            <Link to={"/blog"}>Blog</Link>
+            <Link to={"/service"}>Services</Link>
             <p>Terms & Condition</p>
           </div>
         </div>

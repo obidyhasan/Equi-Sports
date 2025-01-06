@@ -2,8 +2,8 @@ import { Slide } from "react-awesome-reveal";
 
 const NewsLetterSection = () => {
   return (
-    <section className="mt-20">
-      <section className="newsletter w-full h-[500px] relative">
+    <section className="my-20">
+      <section className="newsletter w-full h-[420px] relative">
         <figure className="w-full h-full">
           <img
             src={"https://i.ibb.co.com/W619GHh/214900638036.jpg"}

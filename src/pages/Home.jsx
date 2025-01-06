@@ -3,6 +3,8 @@ import Slider from "../components/Slider";
 import { NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { Slide } from "react-awesome-reveal";
 import NewsLetterSection from "../components/NewsLetterSection";
+import TopSalesProductSection from "../components/TopSalesProductSection";
+import BlogSection from "../components/BlogSection";
 
 const Home = () => {
   const categories = useLoaderData();
@@ -17,7 +19,9 @@ const Home = () => {
           <div className="my-20">
             <div>
               <Slide>
-                <h1 className="text-4xl font-bold">Explore Our Top Picks</h1>
+                <h1 className="text-4xl font-semibold">
+                  Explore Our Top Picks
+                </h1>
               </Slide>
               <p className="font-light text-gray-500 max-w-2xl mt-5">
                 {`Browse our curated selection of premium sports equipment and
@@ -54,12 +58,13 @@ const Home = () => {
             </div>
           </div>
         </section>
-
-        <section>
-          <ReviewSection></ReviewSection>
-        </section>
+        <TopSalesProductSection></TopSalesProductSection>
       </div>
       <NewsLetterSection></NewsLetterSection>
+      <BlogSection></BlogSection>
+      <section className="max-w-screen-2xl mx-auto px-5">
+        <ReviewSection></ReviewSection>
+      </section>
     </div>
   );
 };

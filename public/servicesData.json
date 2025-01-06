@@ -1,0 +1,32 @@
+[
+  {
+    "_id": 1,
+    "name": "High-Quality Sports Equipment",
+    "description": "We offer a wide range of gear and accessories for various sports disciplines, including football, cricket, basketball, tennis, and more. Every product is carefully chosen to meet the demands of athletes at all levels."
+  },
+  {
+    "_id": 2,
+    "name": "Customization Services",
+    "description": "Tailor your sports equipment to match your needs. Whether it's custom grips for your bat or personalized jerseys, we ensure you get gear that's truly yours."
+  },
+  {
+    "_id": 3,
+    "name": "Expert Recommendations",
+    "description": "Not sure what you need? Our team of sports enthusiasts and professionals are ready to guide you in selecting the right equipment for your game."
+  },
+  {
+    "_id": 4,
+    "name": "Maintenance and Care Tips",
+    "description": "Get advice on how to maintain and care for your sports equipment to ensure longevity and peak performance."
+  },
+  {
+    "_id": 5,
+    "name": "Fast Shipping & Delivery",
+    "description": "We provide reliable and quick delivery services to get your products to you on time, wherever you are."
+  },
+  {
+    "_id": 6,
+    "name": "Easy Returns & Exchanges",
+    "description": "We want you to shop with confidence. If something’s not right, our hassle-free return and exchange policy has got you covered."
+  }
+]

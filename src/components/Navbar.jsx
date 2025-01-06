@@ -21,6 +21,12 @@ const Navbar = () => {
       <NavLink to={"/allSportsEquipment"} className="text-base text-gray-500">
         All Sports Equipment
       </NavLink>
+      <NavLink to={"/blog"} className="text-base text-gray-500">
+        Blog
+      </NavLink>
+      <NavLink to={"/service"} className="text-base text-gray-500">
+        Services
+      </NavLink>
     </div>
   );
 

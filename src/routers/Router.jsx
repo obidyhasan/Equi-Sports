@@ -11,6 +11,8 @@ import MyEquipmentList from "../pages/MyEquipmentList";
 import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
 import UpdateEquipment from "../pages/UpdateEquipment";
+import Blog from "../pages/Blog";
+import Service from "../pages/Service";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -54,6 +56,14 @@ const Router = () => {
         {
           path: "/allSportsEquipment",
           element: <AllSportsEquipment></AllSportsEquipment>,
+        },
+        {
+          path: "/service",
+          element: <Service></Service>,
+        },
+        {
+          path: "/blog",
+          element: <Blog></Blog>,
         },
         {
           path: "/addEquipment",

@@ -1,0 +1,52 @@
+[
+  {
+    "_id": 1,
+    "title": "Top 5 Essential Gear for Every Athlete",
+    "author": "John Doe",
+    "date": "2025-01-07",
+    "category": "Sports Gear",
+    "excerpt": "Discover the must-have sports equipment to boost your performance and stay safe on the field.",
+    "image": "https://i.ibb.co.com/1rmg4Tm/a541406875810703dd282aa06d1134e5e02d2ca0.jpg",
+    "path": "/blog/essential-gear"
+  },
+  {
+    "_id": 2,
+    "title": "10 Tips to Improve Your Game",
+    "author": "Emily Carter",
+    "date": "2025-01-05",
+    "category": "Training",
+    "excerpt": "Learn practical tips and tricks to enhance your skills and take your performance to the next level.",
+    "image": "https://i.ibb.co.com/StjShyx/doping-in-sport.webp",
+    "path": "/blog/improve-game"
+  },
+  {
+    "_id": 3,
+    "title": "The Benefits of Choosing the Right Shoes",
+    "author": "Michael Lee",
+    "date": "2025-01-03",
+    "category": "Footwear",
+    "excerpt": "Understand how the right pair of shoes can prevent injuries and maximize comfort during sports activities.",
+    "image": "https://i.ibb.co.com/KLXYc5M/1-6n-Lg-Vj-ORTZKj-Aq-v-AV7-Tig.jpg",
+    "path": "/blog/right-shoes"
+  },
+  {
+    "_id": 4,
+    "title": "How to Maintain Your Sports Equipment",
+    "author": "Sarah Thompson",
+    "date": "2025-01-02",
+    "category": "Maintenance",
+    "excerpt": "Keep your gear in top condition with these simple maintenance tips and tricks.",
+    "image": "https://i.ibb.co.com/NpzFs2b/1aa075b51300a73d600ae7851480841275257a70.jpg",
+    "path": "/blog/maintain-equipment"
+  },
+  {
+    "_id": 5,
+    "title": "Top Sports Trends to Watch in 2025",
+    "author": "Chris Evans",
+    "date": "2025-01-01",
+    "category": "Sports News",
+    "excerpt": "Stay updated on the latest trends and innovations shaping the world of sports this year.",
+    "image": "https://i.ibb.co.com/d0jVc12/5fba5ac8ce22171ca13f1196dac4930f177aabfd.jpg",
+    "path": "/blog/sports-trends"
+  }
+]
