@@ -73,11 +73,7 @@ const Router = () => {
         },
         {
           path: "/productDetails/:productId",
-          element: (
-            <PrivateRouter>
-              <ProductDetails></ProductDetails>
-            </PrivateRouter>
-          ),
+          element: <ProductDetails></ProductDetails>,
           loader: ({ params }) =>
             fetch(
               `https://equi-sports-server-jade.vercel.app/products/${params.productId}`

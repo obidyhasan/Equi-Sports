@@ -16,7 +16,7 @@ const ProductDetails = () => {
   } = loaderData;
 
   return (
-    <div className="max-w-7xl mx-auto px-5">
+    <div className="max-w-screen-2xl mx-auto px-5">
       <div className="flex flex-col md:flex-row gap-10 mt-5 mb-10 items-center">
         <div className="w-full h-min md:w-2/5 rounded-md">
           <figure className="bg-base-200 rounded-md">

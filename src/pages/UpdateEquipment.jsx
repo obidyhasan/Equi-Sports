@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SectionHeader from "../components/SectionHeader";
 
 const UpdateEquipment = () => {
   const loaderData = useLoaderData();
@@ -76,11 +77,13 @@ const UpdateEquipment = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-5 py-5">
-      <h1 className="font-semibold text-xl">Update Equipment</h1>
-      <p className="font-light max-w-xl text-sm mt-2">
-        Upgrade your workouts with our latest gym and sports equipment!
-      </p>
+    <div className="max-w-screen-2xl mx-auto px-5 py-5">
+      <SectionHeader
+        title={"Update Equipment"}
+        subtitle={
+          "Upgrade your workouts with our latest gym and sports equipment!"
+        }
+      ></SectionHeader>
 
       <div className="border rounded p-5 my-10">
         <form onSubmit={handelOnSubmit} className="space-y-3">

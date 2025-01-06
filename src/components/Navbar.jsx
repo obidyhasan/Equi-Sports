@@ -25,7 +25,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-5">
+    <div className="max-w-screen-2xl mx-auto px-5">
       <div className="navbar py-3 px-0">
         <div className="sm:flex-1">
           <div className="dropdown">
@@ -133,8 +133,7 @@ const Navbar = () => {
                   </div>
                   <button
                     onClick={logOut}
-                    className="btn  rounded bg-accentColor  hover:bg-gray-600
-          text-white  border-none"
+                    className="btn btn-outline rounded  "
                   >
                     Logout
                   </button>

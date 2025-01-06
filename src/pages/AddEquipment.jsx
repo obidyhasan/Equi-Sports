@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-import { Slide } from "react-awesome-reveal";
+import SectionHeader from "../components/SectionHeader";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
@@ -72,14 +72,13 @@ const AddEquipment = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-5 py-5">
-      <Slide>
-        <h1 className="font-semibold text-2xl">Add Equipment</h1>
-      </Slide>
-      <p className="font-light max-w-xl text-sm mt-2">
-        Add your sports equipment to the store by providing product details,
-        including images, pricing, and specifications.
-      </p>
+    <div className="max-w-screen-2xl mx-auto px-5 py-5">
+      <SectionHeader
+        title={"Add Equipment"}
+        subtitle={
+          "Add your sports equipment to the store by providing product details, including images, pricing, and specifications."
+        }
+      ></SectionHeader>
 
       <div className="border rounded p-5 my-10">
         <form onSubmit={handelOnSubmit} className="space-y-3">

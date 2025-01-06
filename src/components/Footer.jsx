@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-base-200 py-10">
-      <div className="max-w-7xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-10 sm:gap-5">
+    <div className="bg-base-100 border-t py-10">
+      <div className="max-w-screen-2xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-10 sm:gap-5">
         <div>
           <h1 className="font-bold text-2xl mb-5">Equi Sports</h1>
           <p className="text-sm max-w-lg text-gray-500">
