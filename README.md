@@ -23,3 +23,43 @@ EquiSports is an online platform offering a wide range of premium sports equipme
 - **Backend**: Node.js, Express.js, MongoDB
 - **Authentication**: Firebase Authentication
 - **Hosting**: Firebase (Client-side), Vercel (Server-side)
+
+## Steps to Run the Project
+
+### 1. Clone the Repository
+
+1. Go to the GitHub repository page of the project you want to run.
+2. Copy the repository URL (e.g., `https://github.com/username/repository.git`).
+3. Open your terminal or command prompt.
+4. Navigate to the directory where you want to clone the repository:
+   ```bash
+   cd /path/to/your/directory
+   ```
+5. Clone the repository:
+   ```bash
+   git clone https://github.com/username/repository.git
+   ```
+6. Navigate to the cloned project folder:
+   ```bash
+   cd repository
+   ```
+
+---
+
+### 2. Install Dependencies
+
+1. Ensure you are inside the project directory.
+2. Run the following command to install project dependencies:
+   ```bash
+   npm install
+   ```
+
+---
+
+### 3. Additional Commands
+
+- **Build the Project:**
+  ```bash
+  npm run build
+  ```
+  This command generates the optimized production build of the project in the `build` folder.
